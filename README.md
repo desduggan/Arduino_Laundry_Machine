@@ -29,7 +29,7 @@ In short, the Arduino board outputs a signal to its usb serial port, which is ob
 
 ## Overview
 
-**General Procedure: **
+[Overview](https://raw2.github.com/drduggan/Arduino_Laundry_Machine/master/image.png)
 
 Attach the Arduino to the washing machine and hook it up to the Ubuntu machine. Once the Arduino script is uploaded to the unit, run the readArduino.py script to update the firebase url. Then, upload the index.html file and supporting structure to a free Heroku dyno. 
 
