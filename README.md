@@ -1,5 +1,7 @@
-Laundry Machine Monitor with Arduino, Python, Heroku and Firebase
+# Laundry Machine Monitor with Arduino, Python, Heroku and Firebase
 =======================
+
+Author: [Desmond Duggan](http://www.desmondrduggan.com)
 
 The days of walking down four flights of stairs with a full load of laundry only to be let down once again by the busy rumbling of occupied laundry machines are over. **For Free.**In this project, we used the following technologies to build an online-accessible monitor for the washing machine in our home. 
 
