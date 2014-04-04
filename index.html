@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Arduino Laundry Monitor by drduggan</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Arduino Laundry Monitor</h1>
+        <p>Monitor the status of your laundry machine using Arduino. </p>
+
+        <p class="view"><a href="https://github.com/drduggan/Arduino_Laundry_Machine">View the Project on GitHub <small>drduggan/Arduino_Laundry_Machine</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/drduggan/Arduino_Laundry_Machine/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/drduggan/Arduino_Laundry_Machine/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/drduggan/Arduino_Laundry_Machine">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="laundry-machine-monitor-with-arduino-python-heroku-and-firebase" class="anchor" href="#laundry-machine-monitor-with-arduino-python-heroku-and-firebase"><span class="octicon octicon-link"></span></a>Laundry Machine Monitor with Arduino, Python, Heroku and Firebase</h1>
+
+<p>The days of walking down four flights of stairs with a full load of laundry only to be let down once again by the busy rumbling of occupied laundry machines are over. **For Free.**In this project, we used the following technologies to build an online-accessible monitor for the washing machine in our home. </p>
+
+<p>In short, the Arduino board outputs a signal to its usb serial port, which is observed by a scheduled python script. This python script uses a python-firebase wrapper to make a REST call to update an entry in the Firebase. Simultaneously, the Heroku hosted static Rack application listens to any updates made to the Firebase and updates the page asynchronously. </p>
+
+<p><strong>Washing Machine</strong></p>
+
+<ul>
+<li><a href="http://www.arduino.cc/">Arduino Uno</a></li>
+<li>
+<a href="https://github.com/ozgur/python-firebase">Python - Firebase</a> - thanks Ozgur</li>
+<li>PySerial</li>
+<li>APScheduler</li>
+<li>Ubuntu OS</li>
+</ul><p><strong>Web</strong></p>
+
+<ul>
+<li><a href="http://rack.github.io/">Ruby Rack</a></li>
+<li><a href="https://www.firebase.com/">Firebase</a></li>
+<li><a href="https://www.heroku.com/">Heroku</a></li>
+<li>Bundle</li>
+<li>Bootstrap :)</li>
+</ul><p><strong>Pre-reqs</strong></p>
+
+<ol>
+<li>Create a Heroku Account</li>
+<li>Create a Firebase account</li>
+</ol><h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p><img src="https://raw2.github.com/drduggan/Arduino_Laundry_Machine/master/image.png" alt="Overview"></p>
+
+<p>Attach the Arduino to the washing machine and hook it up to the Ubuntu machine. Once the Arduino script is uploaded to the unit, run the readArduino.py script to update the firebase url. Then, upload the index.html file and supporting structure to a free Heroku dyno. </p>
+
+<h2>
+<a name="arduino" class="anchor" href="#arduino"><span class="octicon octicon-link"></span></a>Arduino</h2>
+
+<p>Assemble the <a href="http://arduino.cc/en/Main/ArduinoBoardUno">Arduino Uno</a> and an accelerometer like the <a href="https://www.sparkfun.com/products/9836">ADXL345</a>. Attach to the washing machine and link to machine running Ubuntu. Install the Arduino IDE and upload the script. </p>
+
+<h2>
+<a name="python-script" class="anchor" href="#python-script"><span class="octicon octicon-link"></span></a>Python Script</h2>
+
+<pre><code>$ pip install apscheduler
+$ pip install pyserial
+$ pip install python-firebase
+</code></pre>
+
+<p>Adjust the name of the serial port to the value of the port being used for the Arduino board - will be a USB port. Insert the address of your Firebase.  Run it. </p>
+
+<h2>
+<a name="heroku-and-web" class="anchor" href="#heroku-and-web"><span class="octicon octicon-link"></span></a>Heroku and Web</h2>
+
+<p>We used a magical tool developed by Marshall Huss located <a href="http://herokustaticmagico.herokuapp.com/">here</a> to auto generate a static site framework in Rack with instructions on how to upload to Heroku. Rack is a lightweight static site framework written in Ruby. </p>
+
+<pre><code>$ pip install bundle
+$ pip install heroku
+$ gem install rack
+</code></pre>
+
+<p>Steps:</p>
+
+<ol>
+<li>Make a Firebase</li>
+<li>Download the package from the link above</li>
+<li>Unpack and bundle install</li>
+<li>Heroku Create</li>
+<li>git add .</li>
+<li>git commit -m "Initial Commit"</li>
+<li>git push heroku master</li>
+<li>git shit done</li>
+</ol><p>This is a collaborative project between <a href="https://github.com/andrewng1023">Andrew Ng</a>, Ben Huang and <a href="https://github.com/drduggan">Desmond Duggan</a>. </p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/drduggan">drduggan</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
