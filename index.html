@@ -31,9 +31,14 @@
         <h1>
 <a name="laundry-machine-monitor-with-arduino-python-heroku-and-firebase" class="anchor" href="#laundry-machine-monitor-with-arduino-python-heroku-and-firebase"><span class="octicon octicon-link"></span></a>Laundry Machine Monitor with Arduino, Python, Heroku and Firebase</h1>
 
+<p>Author: <a href="http://www.desmondrduggan.com">Desmond Duggan</a></p>
+
 <p>The days of walking down four flights of stairs with a full load of laundry only to be let down once again by the busy rumbling of occupied laundry machines are over. **For Free.**In this project, we used the following technologies to build an online-accessible monitor for the washing machine in our home. </p>
 
 <p>In short, the Arduino board outputs a signal to its usb serial port, which is observed by a scheduled python script. This python script uses a python-firebase wrapper to make a REST call to update an entry in the Firebase. Simultaneously, the Heroku hosted static Rack application listens to any updates made to the Firebase and updates the page asynchronously. </p>
+
+<h2>
+<a name="technologies" class="anchor" href="#technologies"><span class="octicon octicon-link"></span></a>Technologies</h2>
 
 <p><strong>Washing Machine</strong></p>
 
@@ -108,6 +113,16 @@ $ gem install rack
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-49667232-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
