@@ -1,5 +1,4 @@
 # Laundry Machine Monitor with Arduino, Python, Heroku and Firebase
-=======================
 
 Author: [Desmond Duggan](http://www.desmondrduggan.com)
 
@@ -7,6 +6,7 @@ The days of walking down four flights of stairs with a full load of laundry only
 
 In short, the Arduino board outputs a signal to its usb serial port, which is observed by a scheduled python script. This python script uses a python-firebase wrapper to make a REST call to update an entry in the Firebase. Simultaneously, the Heroku hosted static Rack application listens to any updates made to the Firebase and updates the page asynchronously. 
 
+## Technologies
 
 **Washing Machine**
 
